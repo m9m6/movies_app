@@ -1,19 +1,16 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies/ui/home_screens/profile_tab/profile_avatar.dart';
-import 'package:movies/ui/home_screens/profile_tab/widgets/history_list.dart';
-import 'package:movies/utils/assets_manager.dart';
-import '../../../utils/app_colors.dart';
-import '../../../utils/app_styles.dart';
-import '../../custom_widgets/custom_elevatedButton.dart';
-import '../../update_profile/edit_account.dart';
-import 'logic/profile_cubit.dart';
-
-
-class ProfileTab extends StatelessWidget {
-  static const String profileTab = 'Profile_tab';
-  const ProfileTab({super.key});
-
+import 'package:movies/ui/custom_widgets/custom_elevatedButton.dart';
+import '../../../../utils/app_colors.dart';
+import '../../../../utils/app_styles.dart';
+import '../../../update_profile/edit_account.dart';
+import '../logic/profile_cubit.dart';
+import '../profile_avatar.dart';
+import '../widgets/history_list.dart';
+class ProfileScreen extends StatelessWidget {
+  static const String profileScreen = 'Profile_screen';
+  const ProfileScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -32,7 +29,7 @@ class ProfileTab extends StatelessWidget {
                       child: Column(
                         spacing: 5,
                         children: [
-                          ProfileAvatar(imageUrl:AssetsManager.profile1),
+                          ProfileAvatar(imageUrl: 'assets/gamer (1) (1).png'),
                           FittedBox(
                             child: Text(
                               'User name',
@@ -109,7 +106,7 @@ class ProfileTab extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Center(child: Image.asset(AssetsManager.profile2)),
+                      Center(child: Image.asset('assets/Empty 1.png')),
                       HistoryList(),
                     ],
                   ),
