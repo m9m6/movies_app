@@ -15,6 +15,8 @@ class HistoryList extends StatelessWidget {
               (index) => Image.asset(
             'assets/images/movies_posters_group_2.png',
             fit: BoxFit.cover,
+
+
           ),
         )
     );
