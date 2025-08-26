@@ -20,3 +20,4 @@ class HistoryList extends StatelessWidget {
     );
   }
 }
+
