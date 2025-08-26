@@ -10,9 +10,9 @@ import 'package:movies/utils/assets_manager.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_styles.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const String loginScreen = 'login_screen';
+
   const LoginScreen({super.key});
 
   @override
@@ -49,29 +49,35 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.centerRight,
                 child: CustomTextButton(
                   onPressed: () {
-                   Navigator.pushReplacementNamed(context, AppRoutes.forgetPasswordPage);
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.forgetPasswordPage);
                   },
                   textStyle: AppStyles.regular12Yellow.copyWith(fontSize: 14),
                   text: 'Forget Password?',
                 ),
               ),
               SizedBox(height: height * 0.01),
-              CustomElevatedButton(onPressed: () {
-                Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
-              }, text: 'Login'),
+              CustomElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(
+                        context, AppRoutes.homeScreen);
+                  },
+                  text: 'Login'),
               SizedBox(height: height * 0.02),
-
               Row(
                 mainAxisSize: MainAxisSize.min,
                 //to make the row take only its size .
                 children: [
-                  Text('Don’t Have Account?', style: AppStyles.regular12Yellow.copyWith(fontSize: 14)),
-                  CustomTextButton(onPressed: () {
-                   Navigator.pushReplacementNamed(context, AppRoutes.registerPage);
-                  }, text: 'Create One'),
+                  Text('Don’t Have Account?',
+                      style: AppStyles.regular12Yellow.copyWith(fontSize: 14)),
+                  CustomTextButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, AppRoutes.registerPage);
+                      },
+                      text: 'Create One'),
                 ],
               ),
-
               SizedBox(height: height * 0.02),
               Row(
                 children: [
@@ -82,7 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       endIndent: width * 0.02,
                     ),
                   ),
-                  Text('OR', style: AppStyles.regular12Yellow.copyWith(fontSize: 14)),
+                  Text('OR',
+                      style: AppStyles.regular12Yellow.copyWith(fontSize: 14)),
                   Expanded(
                     child: Divider(
                       color: AppColors.yellowColor,
@@ -95,9 +102,12 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: height * 0.04),
               CustomElevatedButton(
                 hasIcon: true,
-                onPressed: () {},
                 text: 'Login With Google',
                 iconAsset: AssetsManager.googleIcon,
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('success login with google')));
+                },
               ),
             ],
           ),
